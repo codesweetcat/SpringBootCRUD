@@ -90,7 +90,7 @@ public class ProductControllerTest {
 	
 	ObjectMapper mapper = new ObjectMapper();
 	String jsonString = mapper.writeValueAsString(mockProduct);
-	Mockito.when(productService.update(mockProduct));
+	Mockito.when(productService.update(mockProduct)).thenReturn(mockProduct);
 		
 	
 		mockMvc.perform(MockMvcRequestBuilders.put("/bookings/updateProduct")
