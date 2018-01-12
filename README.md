@@ -10,7 +10,7 @@
 1 Maven
 2 DB: mysql connector
 3 Data: jpa
-4 Testing:JUnit, Hamcrest, MockMvc, Mockito
+4 Testing:JUnit, Hamcrest, MockMvc, Mockito,EclEmma
 
 
 ## API Reference
@@ -25,5 +25,5 @@
 
 ## Tests
 
-run as  JUnit 
-
+ Right click on the project
+ Coverage As → JUnit Test
