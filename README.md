@@ -1,8 +1,8 @@
 ## Products CRUD DB project
 
-1 Create productcontroller can CRUD MqSQL. MqSQL table structure as following : 
-   product_id, product_name, pricePerSingle, quantity, quality, totalPrice
-2 testing includes server layer testing and controller layer testing : ProductServiceTest.java && ProductControllerTest.java
+## 1 Create productcontroller can CRUD MqSQL. MqSQL table structure as following : 
+      product_id, product_name, pricePerSingle, quantity, quality, totalPrice
+## 2 Testing includes server layer testing and controller layer testing : ProductServiceTest.java && ProductControllerTest.java
 
 
 ## Dependency 
