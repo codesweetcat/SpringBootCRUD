@@ -2,6 +2,13 @@
 
 ## 1 Create productcontroller can CRUD MqSQL. MqSQL table structure as following: 
       product_id, product_name, pricePerSingle, quantity, quality, totalPrice
+      
+      ##
+      4 banana	2	3	8	6
+      5 orange	2	5	4	10
+      6 banana	2	3	4	6
+      7 orange	2	5	4	10
+					
 ## 2 Testing includes server layer testing and controller layer testing : ProductServiceTest.java && ProductControllerTest.java
 
 
