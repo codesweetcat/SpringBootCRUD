@@ -32,7 +32,7 @@ import javax.validation.Valid;
 @RestController
 @CrossOrigin
 
-@RequestMapping(value = "/bookings")
+@RequestMapping(value = "/bookingsv2")
 
 public class ProductController {
 	 @Autowired
@@ -40,27 +40,27 @@ public class ProductController {
 	 @Autowired
 	    private ProductofferService productService;
 	 //1 GET All products
-	 @GetMapping( "/allprojects")
+	 @GetMapping( "/projects/list")
 	 public  Collection<Product> getAll(){	      
 	        return  this.productRepository.findAll();
 	    }
 	 //2 Add a new Product via Repository
-	 @PostMapping("/addNewProduct")
+	 @PostMapping("//product/add")
 	 public Product createProduct( @RequestBody Product iPro) {
 	     return productRepository.save(iPro);
 	 }
 	 //3 Update a Projuct via ProjectService
-	 @PutMapping("/updateProduct")
+	 @PutMapping("//product/update")
 	 public Product updateProduct( @RequestBody Product iPro){
 		 return productService.update(iPro);
 	 }
-	 @GetMapping("/findOneById/{projectId}")
+	 @GetMapping("/product/{projectId}/get")
 	 public Product findOneById( @PathVariable Long projectId){
 		 return productRepository.findOne(projectId);
 	 }
 	 
 	//4 deleteProduct via Repository
-	 @DeleteMapping("/removeProduct")
+	 @DeleteMapping("//product/delete")
 	 public ResponseEntity<Response> deleteS(@Valid  @RequestBody Product iPro ) throws Exception{
 		 
 		 if(iPro == null || iPro.getProduct_id() <= 0){
@@ -70,7 +70,7 @@ public class ProductController {
 		 return new ResponseEntity<Response>(new Response(HttpStatus.OK.value(), "ToDo has been deleted"), HttpStatus.OK);
 	 }
 	 // 5 delete All Products via Repository
-	 @DeleteMapping("/removeAllProduct")
+	 @DeleteMapping("/products/list/delete")
 	 public void deleteP( ){
 		 productRepository.deleteAll();
 	 }

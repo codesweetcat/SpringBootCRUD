@@ -60,14 +60,14 @@ public class ProductControllerTest {
     mockProductList.add(new Product("apple",2,3,4,6));
     mockProductList.add(new Product("banana",2,4,4,8));	
 		Mockito.when(proRepository.findAll()).thenReturn(mockProductList);
-		mockMvc.perform(MockMvcRequestBuilders.get("/bookings/allprojects").accept(MediaType.APPLICATION_JSON))
+		mockMvc.perform(MockMvcRequestBuilders.get("/bookingsv2/projects/list").accept(MediaType.APPLICATION_JSON))
 			.andExpect(jsonPath("$", hasSize(4))).andDo(print());
 	}
 	
 	@Test
 	public void verifyProjectById() throws Exception  {
 		
-		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/bookings/findOneById/4").accept(MediaType.APPLICATION_JSON);
+		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/bookingsv2/product/4/get").accept(MediaType.APPLICATION_JSON);
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 		System.out.println("see response"+result);
 		
@@ -93,7 +93,7 @@ public class ProductControllerTest {
 	Mockito.when(productService.update(mockProduct)).thenReturn(mockProduct);
 		
 	
-		mockMvc.perform(MockMvcRequestBuilders.put("/bookings/updateProduct")
+		mockMvc.perform(MockMvcRequestBuilders.put("/bookingsv2/product/update")
 			
 			.content(jsonString)
 			.contentType(MediaType.APPLICATION_JSON))
