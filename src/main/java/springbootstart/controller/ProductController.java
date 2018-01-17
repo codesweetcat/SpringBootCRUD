@@ -45,12 +45,12 @@ public class ProductController {
 	        return  this.productRepository.findAll();
 	    }
 	 //2 Add a new Product via Repository
-	 @PostMapping("//product/add")
+	 @PostMapping("/product/add")
 	 public Product createProduct( @RequestBody Product iPro) {
 	     return productRepository.save(iPro);
 	 }
 	 //3 Update a Projuct via ProjectService
-	 @PutMapping("//product/update")
+	 @PutMapping("/product/update")
 	 public Product updateProduct( @RequestBody Product iPro){
 		 return productService.update(iPro);
 	 }
@@ -60,7 +60,7 @@ public class ProductController {
 	 }
 	 
 	//4 deleteProduct via Repository
-	 @DeleteMapping("//product/delete")
+	 @DeleteMapping("/product/delete")
 	 public ResponseEntity<Response> deleteS(@Valid  @RequestBody Product iPro ) throws Exception{
 		 
 		 if(iPro == null || iPro.getProduct_id() <= 0){
